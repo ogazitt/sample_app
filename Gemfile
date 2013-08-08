@@ -8,6 +8,10 @@ gem 'rails', '4.0.0'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'bcrypt-ruby', '3.0.1'
 
+group :development do
+	gem 'debugger', '1.6.1'
+end
+
 # Use sqlite3 as the database for Active Record
 group :development, :test do
 	gem 'sqlite3', '1.3.7'
@@ -26,6 +30,8 @@ group :test do
 
   # Uncomment this line on OS X.
   gem 'growl', '1.0.3'
+
+  gem 'factory_girl_rails', '4.2.1'
 end
 
 # Use SCSS for stylesheets
