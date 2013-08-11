@@ -9,6 +9,10 @@ describe "Authentication" do
 
 		it { should have_content('Sign in') }
 		it { should have_title('Sign in') }
+		it { should_not have_link('Users') }
+		it { should_not have_link('Profile') }
+		it { should_not have_link('Settings') }
+		it { should_not have_link('Sign out') }		
 	end
 
 	describe "signin" do
@@ -118,6 +122,16 @@ describe "Authentication" do
 
 			describe "submitting a DELETE request to the Users#destroy action for admin" do
 				before { delete user_path(admin) }
+				specify { expect(response).to redirect_to(root_url) }
+			end
+		end
+
+		describe "as signed-in user" do
+			let (:user) { FactoryGirl.create(:user) }
+			before { sign_in user, no_capybara: true }
+
+			describe "visiting the new user page" do
+				before { get signup_path }
 				specify { expect(response).to redirect_to(root_url) }
 			end
 		end
