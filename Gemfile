@@ -68,6 +68,10 @@ group :production do
 	gem 'rails_12factor', '0.0.2'
 end
 
+gem 'mongo', '1.9.1'
+gem 'bson_ext', '1.9.1'
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
