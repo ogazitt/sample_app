@@ -70,6 +70,7 @@ end
 
 gem 'mongo', '1.9.1'
 gem 'bson_ext', '1.9.1'
+#gem 'mongoid', '3.1.4'
 
 
 # Use ActiveModel has_secure_password

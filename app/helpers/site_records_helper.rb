@@ -1,0 +1,2 @@
+module SiteRecordsHelper
+end
